@@ -43,16 +43,20 @@ def Calcular_promedio_aseo(lista_productos):
 
 class Main():
     def main():
-        for i in range(12):
-            nombre = input(f"ingrese el nombre del producto {i + 1}")
-            categoria = input(f"ingrese la categoria del producto {i + 1}")
-            precio_total = int(input(f"ingrese el precio total del producto {i + 1}"))
-            iva = float(input(f"ingrese el iva del producto {i + 1}"))
-            mi_producto = Producto(nombre, categoria, precio_total, iva )
+        lista_productos= []
+        for i in range (12):
+            nombre = input(f'ingrese el nombre del producto {i+1}:')
+            categoria = input(f'ingrese la categoria del producto {i+1}:')
+            precio_total = int(input(f'ingrese el precio total del producto {i+1}:'))
+            iva = float(input(f'ingrese el iva del producto {i+1}:'))
+            mi_producto = Productos(nombre,categoria,precio_total,iva)
             lista_productos.append(mi_producto)
-        print(f"El cumulado del precio total de los productos con categoria granos es: {calcular_acumulado_granos(lista_productos)}")
-    main()
+        print(f'el acumulado del precio total de los productos con categoria granos es:{calcular_acumulado_granos(lista_productos)}')
+        print(f'el acumulado del precio total de los productos con categoria lacteos es:{Calcular_acumulado_lacteos(lista_productos)}')
+        print(f' el promedio del precio total de las verduras es:{Calcular_promendio_verduras(lista_productos)} ')
+        print(f' el promedio del precio total de los productos de aseo con precio menor a $20000 es:{Calcular_promedio_aseo(lista_productos)} ')
 
+    main()
 
 
 
